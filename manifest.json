@@ -1,7 +1,7 @@
 {
     "name": "Misskey Post Interruptor",
     "version": "1.0.0",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "description": "Misskeyの投稿内容をフォームから書き換える拡張機能です",
     "content_scripts": [
         {
@@ -10,8 +10,20 @@
                 "https://misskey.io/"
             ],
             "js": [
+                "src/gpt.js",
+                "src/ogya.js",
                 "src/main.js"
+            ],
+            "css": [
+                "src/main.css"
             ]
         }
-    ]
+    ],
+    "permissions": [
+        "storage"
+    ],
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    }
 }
