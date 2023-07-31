@@ -42,7 +42,12 @@ const Completion = class {
         let data = await response.json();
 
         //余計な'"'の削除
-        data = data.slice(1, -1);
+        if (data[0] == '"') {
+            data = data.slice(1);
+        }
+        if (data[data.length - 1] == '"') {
+            data = data.slice(0, -1);
+        }
 
         console.log(data);
         return data;
