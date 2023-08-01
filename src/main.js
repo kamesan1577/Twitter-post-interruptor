@@ -16,7 +16,7 @@ const observer = new MutationObserver((mutations) => {
                         const form = node.querySelector("footer[class=xkr7J]");
                         // console.log(form);
                         if (form) {
-                            form.after(buttonWrapper);
+                            form.appendChild(buttonWrapper);
                         }
                     }
                 }

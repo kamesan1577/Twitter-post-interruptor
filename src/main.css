@@ -1,13 +1,14 @@
-.buttonWrapper {
+.button-wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: 0px 16px 8px 16px;
+    align-self: center;
 }
 
 .exButton {
-    margin: 2px;
-    border: 2px solid;
-    border-radius: 8px;
+    margin: 0 0 0 5px;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 6px;
     color: #fff;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    background-color: rgb(134, 179, 0);
 }
