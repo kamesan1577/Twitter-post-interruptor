@@ -34,11 +34,11 @@ const Completion = class {
     }
     // TODO: 誰でも使えるので何かしらの制限をかける
     // AWS lambda経由でAI-MOPを叩く
-    async sendPromptWithWrapper(prompt) {
+    async sendPromptWithWrapper(prompt, model = "gpt-3.5-turbo") {
         const END_POINT = "https://95nbyqlsr2.execute-api.us-east-1.amazonaws.com/test";
         const userPrompt = prompt;
         console.log(userPrompt);
-        const response = await fetch(`${END_POINT}?prompt="${userPrompt}"`);
+        const response = await fetch(`${END_POINT}?prompt=${userPrompt}&model=${model}`);
         let data = await response.json();
 
         //余計な'"'の削除
