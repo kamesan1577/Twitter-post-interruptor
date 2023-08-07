@@ -1,4 +1,4 @@
-# Misskey-post-interruptor
+# Twitter-post-interruptor
 ## 概要
 世にはびこる誹謗中傷を断つための啓蒙アプリケーションです <br>
 Chromeの拡張機能として配布しています

@@ -1,15 +1,15 @@
 {
-    "name": "Misskey Post Interruptor",
+    "name": "X Post Interruptor",
     "version": "1.0.0",
     "manifest_version": 3,
-    "description": "Misskeyの投稿内容をフォームから書き換える拡張機能です",
+    "description": "Xの投稿内容をフォームから書き換える拡張機能です",
     "content_scripts": [
         {
             "matches": [
-                "https://omochifestival.com/",
-                "https://misskey.io/"
+                "https://twitter.com/*"
             ],
             "js": [
+                "src/input.js",
                 "src/gpt.js",
                 "src/ogya.js",
                 "src/main.js"

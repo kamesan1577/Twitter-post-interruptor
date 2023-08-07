@@ -58,14 +58,13 @@ const ModerateWithLlmButton = class {
     constructor(textArea) {
         this.button = document.createElement("button");
         this.buttonName = "修正";
-        this.buttonValue = textArea.value;
+        this.buttonValue = textArea.textContent;
         this.button.textContent = this.buttonName;
         this.button.className = "exButton";
         this.button.addEventListener("click", async () => {
             const completion = new Completion();
-            const newText = await completion.sendPromptWithWrapper(textArea.value);
-            textArea.value = newText;
-            textArea.dispatchEvent(new Event("input", { bubbles: true }));
+            const newText = await completion.sendPromptWithWrapper(textArea.textContent);
+            await setInputText(textArea, newText);
         });
     }
 }
