@@ -3,13 +3,11 @@ const observer = new MutationObserver((mutations) => {
         if (mutation.addedNodes.length) {
             mutation.addedNodes.forEach((node) => {
                 if (node.querySelector) {
-                    let textArea = document.querySelector('[data-testid="tweetTextarea_0"]');
-                    textArea = textArea.querySelector('[data-text="true"]')?.parentNode;
-                    console.log(textArea);
+                    const textArea = fetchTextArea();
                     if (textArea) {
                         const buttonWrapper = document.createElement("div");
                         buttonWrapper.className = "button-wrapper";
-                        const buttons = [new ModerateWithLlmButton(textArea), new OgyaButton(textArea),];
+                        const buttons = [new ModerateWithLlmButton(textArea)];
                         for (const button of buttons) {
                             buttonWrapper.appendChild(button.button);
                         }

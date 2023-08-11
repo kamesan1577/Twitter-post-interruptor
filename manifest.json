@@ -9,6 +9,7 @@
                 "https://twitter.com/*"
             ],
             "js": [
+                "src/fetchTextArea.js",
                 "src/input.js",
                 "src/gpt.js",
                 "src/ogya.js",
